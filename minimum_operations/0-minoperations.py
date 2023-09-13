@@ -16,4 +16,4 @@ def minOperations(n):
             n = n / b
         b += 1
     return a
-#this code was created Islam Omar.
+# this code was created Islam Omar.
