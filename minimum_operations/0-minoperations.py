@@ -1,20 +1,20 @@
 #!/usr/bin/python3
+"""
+minimum operations
+"""
+
 
 def minOperations(n):
-    if n <= 1:
-        return 0
+    """
+    returns the fewest number of operation
+    """
+    a = 0
+    b = 2
+    while n > 1:
+        while n % b == 0:
+            a += b
+            n = n / b
+        b += 1
+    return a
+# this code was created by Islam Omar Hemada.
 
-    dp = [0] * (n + 1)
-    
-    for i in range(2, n + 1):
-        dp[i] = float('inf')
-        for j in range(1, i):
-            if i % j == 0:
-                dp[i] = min(dp[i], dp[j] + (i // j))
-    
-    return dp[n] if dp[n] != float('inf') else 0
-
-# Example usage:
-n = 9
-result = minOperations(n)
-print("Number of operations:", result)
