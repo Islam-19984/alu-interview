@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Calculate the amount of rainwater that can be retained between walls."""
 
+
 def rain(walls):
     if not walls:
         return 0
@@ -22,6 +23,7 @@ def rain(walls):
         total_water += min(left_max[i], right_max[i]) - walls[i]
 
     return total_water
+
 
 if __name__ == "__main__":
     # Test cases
