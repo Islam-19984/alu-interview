@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Calculate the amount of rainwater that can be retained between walls."""
+"""Calculate the amount of rainwater that can be retained between walls."""
+
 def rain(walls):
     if not walls:
         return 0
