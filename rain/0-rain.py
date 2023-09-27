@@ -1,25 +1,6 @@
 #!/usr/bin/python3
-
+""" Calculate the amount of rainwater that can be retained between walls."""
 def rain(walls):
-    """
-    Calculate the amount of rainwater that can be retained between walls.
-
-    Args:
-        walls (list[int]): A list of non-negative integers representing wall heights.
-
-    Returns:
-        int: The total amount of rainwater retained.
-
-    This function calculates the amount of rainwater that can be retained between walls
-    by finding the maximum height of walls to the left and right of each position and
-    determining the water that can be trapped at each position.
-
-    Assumptions:
-    - The ends of the list (before index 0 and after index walls[-1]) are not walls,
-      meaning they will not retain water.
-    - If the list is empty, it returns 0.
-    """
-
     if not walls:
         return 0
 
