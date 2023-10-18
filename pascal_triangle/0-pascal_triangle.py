@@ -1,21 +1,23 @@
 #!/usr/bin/python3
-"""
-0-pascal_triangle.py
-"""
 
 def pascal_triangle(n):
+    # Check if n is less than or equal to 0
     if n <= 0:
         return []
 
-    triangle = []
-    for i in range(n):
-        row = []
-        for j in range(i + 1):
-            if j == 0 or j == i:
-                row.append(1)
-            else:
-                prev_row = triangle[i - 1]
-                row.append(prev_row[j - 1] + prev_row[j])
-        triangle.append(row)
+    # Initialize the result list with the first row
+    result = [[1]]
 
-    return triangle
+    for i in range(1, n):
+        # Calculate the next row based on the previous row
+        previous_row = result[-1]
+        next_row = [1]
+        for j in range(1, i):
+            next_row.append(previous_row[j - 1] + previous_row[j])
+        next_row.append(1)
+
+        # Append the next row to the result
+        result.append(next_row)
+
+    return result
+
